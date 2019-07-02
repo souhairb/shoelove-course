@@ -1,44 +1,49 @@
 <div class="big-container product-manage-wrapper flexed-item">
-  <form action="POST" class="add-product-form">
-    <h3 class="form-title"> Edit Sneaker</h3>
+  <form action="/product-edit/{{shoes._id}}/" method="POST" class="add-product-form">
+    <h3 class="form-title">Edit Sneackers</h3>
     <div class="form-item-wrapper flexed-item">
       <label for="sneacker-name" class="label-name label">Model name</label>
-      <input type="text" class="input-text input" placeholder="Nike Air Max 90">
+      <input type="text" name="sneakermodelname" class="input-text input" placeholder="Nike Air Max 90"
+        value={{shoes.modelname}}>
     </div>
     <div class="form-item-wrapper flexed-item">
       <label for="sneacker-ref" class="label-ref label">Réf.</label>
-      <input type="text" class="input-text input" placeholder="ex: NV23498">
+      <input type="text" name="sneakerref" class="input-text input" placeholder="ex: NV23498" value={{shoes.ref}}>
     </div>
     <div class="form-item-wrapper flexed-item">
       <label for="sneacker-size" class="label-ref label">Size</label>
-      <input type="number" class="input-text input" placeholder="ex: 37">
+      <input type="number" name="sneakersize" class="input-text input" placeholder="ex: 37" value={{shoes.sizes}}>
     </div>
     <div class="form-item-wrapper flexed-item">
       <label for="sneacker-descr" class="label-descr label">Description</label>
-      <input type="text" class="input-text input" placeholder="The better sneakers to run">
+      <input type="text" name="sneakerdescr" class="input-text input" placeholder="The better sneakers to run"
+        value={{shoes.description}}>
     </div>
     <div class="form-item-wrapper flexed-item">
       <label for="sneacker-price" class="label-price label">Price</label>
-      <input type="number" class="sneacker-price input" min="1">
+      <input type="number" name="sneakerprice" class="sneacker-price input" min="1" value={{shoes.price}}>
     </div>
     <div class="form-item-wrapper flexed-item">
       <label for="sneacker-main-cat" class="label-main-cat label">Main category</label>
-      <select name="main-category" id="main_category" class="select">
-        <option value="">Choose main Category...</option>
-        <option value="">Men</option>
-        <option value="">Women</option>
-        <option value="">Kids</option>
+      <select class="main-category" name="sneakercategory" id="main_category" class="select" value={{shoes.category}}>
+        <option value="Choose main Category">Choose main Category...</option>
+        <option value="Men">Men</option>
+        <option value="Women">Women</option>
+        <option value="Kids">Kids</option>
       </select>
     </div>
     <div class="form-item-wrapper flexed-item">
       <label class="label">Tags</label>
-      <select name="sneacker-secondary-cat" id="secondary_category" class="select">
-        <option value="">Choose Secondary Category...</option>
-        <option value="">Friendly</option>
-        <option value="">Urban style</option>
-        <option value="">Dope</option>
+      <select class="sneakertags" name="sneakertags" id="secondary_category" class="select" value={{shoes.tags}}>
+        <option value="Choose Secondary Category">Choose Secondary Category...</option>
+        <option value="Friendly">Friendly</option>
+        <option value="Urban style">Urban style</option>
+        <option value="Dope">Dope</option>
       </select>
+      {{#if errorMessage }}
+      <div class="error-message">{{ errorMessage }}</div>
+      {{/if}}
     </div>
-    <button class="button-primary add-sneacker-btn">Add to collection</button>
+    <button class="button-primary add-sneacker-btn">Edit</button>
   </form>
 </div>

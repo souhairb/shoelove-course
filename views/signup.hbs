@@ -3,22 +3,22 @@
     <h1 class="form-title">Start your SneakLove journey</h1>
     <p class="form-subtitle">Enjoy yourself and be comfortable </p>
   </div>
-  <form action="POST" id="form_user">
+  <form action="/signup" method="POST" id="form_user">
     <div class="form-item-wrapper flexed-item">
       <label for="name" class="label-ref label">Name</label>
-      <input type="text" class="input-text input" placeholder="Albert" required>
+      <input type="text" class="input-text input" name="name" placeholder="Albert" required>
     </div>
     <div class="form-item-wrapper flexed-item">
       <label for="last-name" class="label-ref label">Last Name</label>
-      <input type="text" name="last-name" class="input-text input" placeholder="Biceps" required>
+      <input type="text" name="lastname" class="input-text input" placeholder="Biceps" required>
     </div>
     <div class="form-item-wrapper flexed-item">
       <label for="email" class="label-ref label">Email</label>
-      <input type="email" name="password" class="input-text input" placeholder="albert.biceps@gmail.com" required>
+      <input type="email" name="email" class="input-text input" placeholder="albert.biceps@gmail.com" required>
     </div>
     <div class="form-item-wrapper flexed-item">
       <label for="password" class="label-ref label">Password</label>
-      <input type="password" name="last-name" class="input-text input" placeholder="••••••" required>
+      <input type="password" name="password" class="input-text input" placeholder="••••••" required>
     </div>
     <button class="button-primary white">Create Account</button>
   </form>

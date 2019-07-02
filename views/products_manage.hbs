@@ -5,46 +5,32 @@
       <tr class="table-row">
         <th colspan="1" class="table-head">Sneaker Image</th>
         <th colspan="1" class="table-head">Sneaker Name</th>
+        <th colspan="1" class="table-head">Sneaker Price</th>
         <th colspan="1" class="table-head">Sneaker Ref</th>
-        <th colspan="1" class="table-head">Sneaker Prixe</th>
         <th colspan="1" class="table-head"> </a> Edit</th>
         <th colspan="1" class="table-head">Delete</th>
       </tr>
 
     </thead>
     <tbody>
+      {{#each shoes}}
       <tr class="table-row">
         <td class="table-division">
-          <div><img src="/medias/img/shoe.png" alt="img" class="table-image" /></div>
+          <div><img src="/medias/img/shoe.png" alt="img" class="table-image" name="sneakerimage" /></div>
         </td>
         <td class="table-division">
-          <div>Nike Revolution</div>
+          <div name="sneakermodelname">{{this.modelname}}</div>
         </td>
         <td class="table-division">
-          <div>$34</div>
+          <div name="sneakerprice">{{this.price}}</div>
         </td>
         <td class="table-division">
-          <div>N2345H</div>
+          <div name="sneakerref">{{this.ref}}</div>
         </td>
-        <td class="table-division"><a href="/product_edit" class="fa fa-edit table-icon"></a>
+        <td class="table-division"><a href="/product-edit/{{this._id}}" class="fa fa-edit table-icon"></a>
         <td class="table-division"><a href="" class="fa fa-trash table-icon" aria-hidden="true"></a></td>
       </tr>
-      <tr class="table-row">
-        <td class="table-division">
-          <div><img src="/medias/img/shoe.png" alt="img" class="table-image" /></div>
-        </td>
-        <td class="table-division">
-          <div>Nike Revolution</div>
-        </td>
-        <td class="table-division">
-          <div>$34</div>
-        </td>
-        <td class="table-division">
-          <div>N2345H</div>
-        </td>
-        <td class="table-division"><a href="/product-edit" class="fa fa-edit table-icon"></a>
-        <td class="table-division"><a href="" class="fa fa-trash table-icon" aria-hidden="true"></a></td>
-      </tr>
+      {{/each}}
     </tbody>
   </table>
 </div>
